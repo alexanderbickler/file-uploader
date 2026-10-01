@@ -1,0 +1,80 @@
+/* =====================================================================
+   THEME LAYER — derived from "Sample Corporate Finance Theme.css"
+   (FactSet × Nasdaq). Brand tokens below are copied verbatim.
+   To re-skin the app, edit ONLY this file: app styles (styles.css) use
+   the --app-* aliases at the bottom and never hard-code colours.
+   ===================================================================== */
+:root {
+  /* Brand core */
+  --fds-navy:        #004D97;
+  --fds-blue:        #0070C9;
+  --fds-ink:         #111824;
+  --ndaq-blue:       #0090BA;
+  --ndaq-black:      #000000;
+  --white:           #FFFFFF;
+
+  /* Tints */
+  --sky:             #5BC2E7;
+  --ice:             #EAF3FA;
+  --mist:            #D4E6F4;
+
+  /* Neutrals */
+  --slate:           #6B7A90;
+  --gray-100:        #F4F6F9;
+  --gray-300:        #CDD4DE;
+  --gray-500:        #8A95A6;
+  --gray-700:        #3D4757;
+
+  /* Data / status */
+  --gain:            #00A88F;
+  --loss:            #D64545;
+  --highlight:       #F2A900;
+
+  --brand-gradient: linear-gradient(135deg, var(--fds-navy) 0%, var(--fds-blue) 55%, var(--ndaq-blue) 100%);
+
+  /* Typography */
+  --font-heading: "Segoe UI Semibold", "Segoe UI", Arial, sans-serif;
+  --font-body:    "Segoe UI", Arial, sans-serif;
+
+  /* ---- App aliases (light) ---- */
+  --app-bg:            var(--gray-100);
+  --app-surface:       var(--white);
+  --app-surface-alt:   var(--gray-100);   /* zebra rows */
+  --app-sidebar:       var(--white);
+  --app-text:          var(--fds-ink);
+  --app-text-muted:    var(--slate);
+  --app-border:        var(--gray-300);
+  --app-heading:       var(--fds-navy);
+  --app-primary:       var(--fds-blue);
+  --app-primary-hover: var(--fds-navy);
+  --app-on-primary:    var(--white);
+  --app-accent:        var(--ndaq-blue);
+  --app-selected:      var(--ice);
+  --app-table-head:    var(--fds-navy);
+  --app-on-table-head: var(--white);
+  --app-danger:        var(--loss);
+  --app-success:       var(--gain);
+  --app-warn:          var(--highlight);
+  --app-focus:         var(--ndaq-blue);
+  --app-shadow:        0 1px 3px rgba(17, 24, 36, .12), 0 4px 14px rgba(17, 24, 36, .06);
+  --app-radius:        4px;
+}
+
+/* Optional: follow the OS dark mode (the sample theme is light-only; remove this block to stay light) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --app-bg:            #0c121b;
+    --app-surface:       #151d2a;
+    --app-surface-alt:   #1a2434;
+    --app-sidebar:       #111824;
+    --app-text:          #e8edf4;
+    --app-text-muted:    #9aa6b8;
+    --app-border:        #2b3648;
+    --app-heading:       var(--sky);
+    --app-primary:       #2d8ee0;
+    --app-primary-hover: #5bb0f0;
+    --app-selected:      #1c2d44;
+    --app-table-head:    #0b3a70;
+    --app-shadow:        0 1px 3px rgba(0, 0, 0, .5);
+  }
+}

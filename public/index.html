@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Document Library</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230070C9'/%3E%3Cpath d='M9 7h9l5 5v13H9z' fill='%23fff'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <button class="btn btn-icon menu-btn" id="menu-btn" aria-label="Show folders" aria-controls="sidebar" aria-expanded="false">☰</button>
+    <h1 class="brand">Document Library</h1>
+    <form class="search" role="search" id="search-form">
+      <input type="search" id="search" placeholder="Search all documents…" aria-label="Search all documents" autocomplete="off">
+    </form>
+    <button class="btn btn-primary" id="upload-btn">Upload</button>
+    <input type="file" id="file-input" multiple hidden>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar" id="sidebar" aria-label="Folders">
+      <nav id="tree" class="tree"></nav>
+      <div class="sidebar-foot">
+        <button class="btn btn-ghost" id="rescan-btn" title="Pick up files added or removed outside the app">Rescan disk</button>
+        <p class="path" id="lib-path"></p>
+      </div>
+    </aside>
+    <div class="backdrop" id="backdrop"></div>
+
+    <main class="main" id="main">
+      <nav class="crumbs" id="crumbs" aria-label="Breadcrumb"></nav>
+
+      <div class="toolbar" id="toolbar">
+        <button class="btn" id="new-folder-btn">New folder</button>
+        <span class="folder-actions" id="folder-actions">
+          <button class="btn" id="rename-folder-btn">Rename</button>
+          <button class="btn" id="move-folder-btn">Move</button>
+          <button class="btn btn-danger-ghost" id="delete-folder-btn">Delete folder</button>
+        </span>
+        <button class="btn" id="reveal-btn" hidden>Open in Explorer</button>
+      </div>
+
+      <section class="uploads" id="uploads" aria-live="polite" hidden></section>
+
+      <div class="dropzone" id="dropzone">Drop files here to upload to this folder</div>
+
+      <div class="table-wrap">
+        <table class="docs" id="docs">
+          <thead>
+            <tr>
+              <th scope="col" data-sort="name" aria-sort="none"><button>Document name</button></th>
+              <th scope="col" data-sort="uploaded_at" aria-sort="none"><button>Upload date</button></th>
+              <th scope="col" data-sort="size" aria-sort="none"><button>File size</button></th>
+              <th scope="col" data-sort="ext" aria-sort="none"><button>File type</button></th>
+              <th scope="col" class="col-actions"><span class="sr-only">Actions</span></th>
+            </tr>
+          </thead>
+          <tbody id="rows"></tbody>
+        </table>
+        <p class="empty" id="empty" hidden></p>
+      </div>
+      <p class="summary" id="summary"></p>
+    </main>
+  </div>
+
+  <dialog id="dlg">
+    <form id="dlg-form" method="dialog">
+      <h2 id="dlg-title"></h2>
+      <div id="dlg-body"></div>
+      <div class="dlg-actions">
+        <button type="button" class="btn" id="dlg-cancel">Cancel</button>
+        <button type="submit" value="ok" class="btn btn-primary" id="dlg-ok">OK</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>

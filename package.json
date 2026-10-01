@@ -1,0 +1,12 @@
+{
+  "name": "file-uploader",
+  "version": "1.0.0",
+  "description": "Local document library: upload, browse and organise files into real folders on this PC.",
+  "type": "module",
+  "private": true,
+  "engines": { "node": ">=22.5" },
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning server.js",
+    "test": "node --disable-warning=ExperimentalWarning --test test/*.test.mjs"
+  }
+}
