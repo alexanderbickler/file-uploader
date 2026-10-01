@@ -9,7 +9,7 @@ A small, private document library that runs on your own PC. Upload documents thr
 - **Themeable** – all colours and fonts live in one file, [`public/theme.css`](public/theme.css).
 - **Zero dependencies** – plain Node.js; nothing to `npm install`.
 
-📖 Project page: `https://<your-account>.github.io/file-uploader/` *(see [Publishing the project page](#publishing-the-project-page))*
+📖 Project page: `https://alexanderbickler.github.io/file-uploader/` *(see [Publishing the project page](#publishing-the-project-page))*
 
 ## Requirements
 
