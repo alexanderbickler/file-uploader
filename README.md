@@ -24,9 +24,17 @@ cd file-uploader
 npm start
 ```
 
-Then open <http://localhost:3000>. On Windows you can instead double-click **`start.bat`**, which also opens your browser.
+Then type `http://localhost:3000` into your browser (keep the terminal window open while you use the app). On Windows you can instead double-click **`start.bat`**, which also opens your browser.
 
 Your files appear in the `library/` folder next to the app (created on first run).
+
+### Troubleshooting: "This site can't be reached" / `ERR_CONNECTION_REFUSED`
+
+`localhost` means *your own computer*, so `http://localhost:3000` only works **while the app is running on your PC**. Links to it on GitHub or the project page cannot start it for you.
+
+1. Start the app: run `npm start` in the project folder, or double-click `start.bat`.
+2. Leave that window open. When you see `Document Library running at http://localhost:3000`, open the address in your browser.
+3. Still refused? Check the window for an error. `node: command not found` means Node.js is not installed (get 22.5+ from nodejs.org); `EADDRINUSE` means port 3000 is taken, so use another port (`$env:PORT=3001; npm start`, then open `http://localhost:3001`).
 
 ## Using the app
 
