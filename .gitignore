@@ -1,0 +1,11 @@
+# User data — never commit documents or the database
+library/
+data/
+*.db
+*.db-shm
+*.db-wal
+
+node_modules/
+.DS_Store
+Thumbs.db
+.claude/

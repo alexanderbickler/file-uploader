@@ -19,7 +19,7 @@ A small, private document library that runs on your own PC. Upload documents thr
 ## Quick start
 
 ```bash
-git clone https://github.com/<your-account>/file-uploader.git
+git clone https://github.com/alexanderbickler/file-uploader.git
 cd file-uploader
 npm start
 ```
